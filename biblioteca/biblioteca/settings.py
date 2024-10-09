@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'rest_framework',
-    "django_filters",
+    'django_filters',
+    
+
     
 ]
 
@@ -135,7 +137,7 @@ e SearchFilter.'''
 '''Configurar DEFAULT_PAGINATION_CLASS para trabalhar com LimitOffsetPagination.
 Configurar PAGE_SIZE para o tamanho 5.'''
 
-
+'''
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 5,
@@ -144,12 +146,13 @@ REST_FRAMEWORK = {
                                 'rest_framework.filters.SearchFilter']
 }
 
-'''REST_FRAMEWORK = {
-    "DEFAULT_PAGINATION_CLASS": "core.pagination.LimitOffsetPaginationWithUpperBound",
+'''
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "biblioteca.pagination.LimitOffsetPaginationWithUpperBound",
     "PAGE_SIZE": 5,
-    "DEFAULT_FILTER_BACKENDS": (
+    "DEFAULT_FILTER_BACKENDS": [
         "django_filters.rest_framework.DjangoFilterBackend",
         "rest_framework.filters.OrderingFilter",
         "rest_framework.filters.SearchFilter",
-    ),
-}'''
+    ],
+}
