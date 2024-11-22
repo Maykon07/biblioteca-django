@@ -1,14 +1,3 @@
-''' Desenvolvimento de Testes Automatizados
-Desenvolva testes automatizados para a funcionalidade de coleções de livros. Assegure que os testes verifiquem:
-
-1) Criação de uma nova coleção e associação correta ao usuário autenticado;
-
-2)Permissões de acesso:
-    Apenas o colecionador pode editar ou deletar sua coleção;
-    Usuários não autenticados não podem criar, atualizar ou deletar coleções
-
-3) Listagem de coleções visíveis para usuários autenticados'''
-
 from rest_framework import status
 from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
