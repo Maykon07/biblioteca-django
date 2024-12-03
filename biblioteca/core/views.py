@@ -6,12 +6,14 @@ from rest_framework import generics
 from .models import Colecao
 from .serializers import ColecaoSerializer
 from .custom_permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAuthenticated
+
 
 class ColecaoListCreate(generics.ListCreateAPIView):
     queryset = Colecao.objects.all()
     serializer_class = ColecaoSerializer
     name = "colecao-list-create"
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated] 
 
     def perform_create(self, serializer):
         serializer.save(colecionador=self.request.user)
